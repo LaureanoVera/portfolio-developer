@@ -83,6 +83,7 @@ img {
 /* ===== class css ===== */
 .section {
   padding: 3rem 0;
+  color: var(--text-color);
 }
 
 .section-title {
@@ -105,7 +106,7 @@ img {
   background-color: var(--first-color);
 }
 
-/* ===== layout ===== */
+/* ===== Layout ===== */
 .bd-grid {
   max-width: 1024px;
   display: grid;
@@ -124,7 +125,7 @@ img {
   background-color: var(--first-color);
 }
 
-/* ===== nav ===== */
+/* ===== Nav ===== */
 .nav {
   height:var(--header-height);
   display: flex;
@@ -170,12 +171,12 @@ img {
   cursor: pointer;
 }
 
-/* ===== show menu ===== */
+/* ===== Show menu ===== */
 .show {
   right: 0;
 }
 
-/* ===== active menu ===== */
+/* ===== Active menu ===== */
 .active::after {
   position: absolute;
   content: '';
@@ -272,4 +273,32 @@ img {
 
 .about__social-icon:hover {
   color: var(--first-color);
+}
+
+/* ===== Skills ===== */
+.skills__container {
+  row-gap: 2rem;
+}
+
+.skills__subtitle {
+  color: var(--first-color);
+  margin-bottom: var(--mb-3);
+}
+
+.skills__name {
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+  margin-right: var(--mb-2);
+  padding: .25rem .5rem;
+  background-color: var(--white-color);
+  border-radius: .25rem;
+}
+
+.skills__name:hover {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+.skills__img img {
+  border-radius: .5rem;
 }
