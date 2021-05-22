@@ -302,3 +302,50 @@ img {
 .skills__img img {
   border-radius: .5rem;
 }
+
+/* ===== Portfolio ===== */
+.portfolio {
+  background-color: var(--white-color);
+}
+
+.portfolio__container {
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+.portfolio__img {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__img img {
+  border-radius: .5rem;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.portfolio__link {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, .3);
+  border-radius: .5rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: .3s;
+}
+
+.portfolio__link-name {
+  text-shadow: 0 0 5px var(--first-color);
+  color: var(--dark-color);
+}
+
+.portfolio__img:hover .portfolio__link {
+  bottom: 0;
+}
