@@ -201,13 +201,16 @@ img {
 
 @media screen and (max-width: 768px) {
   .nav__menu {
+    display: flex;
+    align-items: center;
     position: fixed;
     top: var(--header-height);
+    top: 0;
     right: -100%;
     width:80%;
-    height: 100%;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, .3);
+    height: 100vh;
+    background: rgba(20, 170, 250, .3);
     transition: .5s;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -235,6 +238,7 @@ img {
   color: var(--white-color);
   font-size: 1.5rem;
   cursor: pointer;
+  z-index: 120;
 }
 
 /* ===== Show menu ===== */
