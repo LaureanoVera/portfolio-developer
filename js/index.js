@@ -22,28 +22,30 @@ const linkAction = () => {
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-// ===== scroll section active link =====
-const sections = document.querySelectorAll('section[id]');
+// Scroll Home
+ScrollReveal().reveal('.home__title', {});
+ScrollReveal().reveal('.home__scroll', {delay: 200});
+ScrollReveal().reveal('.home__img', {origin: 'right', delay: 400});
 
-window.addEventListener('scroll', scrollActive);
+ScrollReveal().reveal('.about__img', {origin: 'left', delay: 400});
 
-const scrollActive = () => {
-  const scrollY = window.pageYOffset;
+// Form
+const $form = document.querySelector('#form');
 
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute('id');
+$form.addEventListener('submit', handleSubmit);
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelectorAll('.nav__menu a[href*=' + sectionId + ']').classList.add('active');
-    } 
-    else {
-      document.querySelectorAll('.nav__menu a[href*=' + sectionId + ']').classList.remove('active');
+async function handleSubmit(event) {
+  event.preventDefault();
+  const form = new FormData(this);
+  const response = await fetch(this.action, {
+    method: this.method,
+    body: form,
+    headers: {
+      'Accept': 'application/json'
     }
-  });
+  })
+  if (response.ok) {
+    this.reset()
+    alert('Thank you for contacting me, I will write to you soon')
+  }
 }
-
-
-
-
