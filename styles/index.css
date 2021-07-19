@@ -46,7 +46,7 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  transition: .4s;
+  /* transition: .4s; */
 }
 
 html {
@@ -113,6 +113,18 @@ img {
 
 
 /* ===== Layout ===== */
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  z-index: 150;
+  background: var(--gradient);
+  box-shadow: 0 0 2px var(--dark-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .bd-grid {
   max-width: 1024px;
   display: grid;
