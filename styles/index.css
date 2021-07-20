@@ -129,8 +129,8 @@ img {
   max-width: 1024px;
   display: grid;
   grid-template-columns: 100%;
-  grid-column-gap: 2rem;
-  width: calc(100% - 2rem);
+  grid-column-gap: 3rem;
+  width: calc(100% - 3rem);
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
@@ -536,7 +536,7 @@ img {
   }
 
   .home__img {
-    width: 524px;
+    width: 34%;
     right: 10%;
   }
 
