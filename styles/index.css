@@ -255,6 +255,8 @@ img {
 }
 
 .home__img {
+  opacity: 1;
+  filter: opacity(1);
   position: absolute;
   right: 1%;
   bottom: 4%;

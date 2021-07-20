@@ -65,11 +65,16 @@ window.addEventListener("scroll", () => {
 });
 
 // ===== animation scroll =====
+let windowSize = window.innerHeight ;
+
+const heroAnimation = () => {
+  let heroImage = document.getElementById('hero_image');
+  heroImage.classList.add('animate__flipInX')
+}
+
 const leftAnimation = () => {
   let left = document.getElementById("left_animate");
   let positionLeft = left.getBoundingClientRect().bottom;
-
-  let windowSize = window.innerHeight ;
 
   if(positionLeft < windowSize) {
     left.classList.add('animate__bounceInLeft')
@@ -83,8 +88,6 @@ const rightAnimation = () => {
   let right = document.getElementById("right_animate");
   let positionRight = right.getBoundingClientRect().top;
 
-  let windowSize = window.innerHeight ;
-
   if(positionRight < windowSize) {
     right.classList.add('animate__bounceInRight')
   }
@@ -93,5 +96,6 @@ const rightAnimation = () => {
   }
 }
 
+document.addEventListener("DOMContentLoaded", heroAnimation);
 window.addEventListener("scroll", leftAnimation);
 window.addEventListener("scroll", rightAnimation);
