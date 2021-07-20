@@ -1,7 +1,7 @@
 // ===== show menu =====
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId);
+    nav = document.getElementById(navId);
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
@@ -63,3 +63,35 @@ window.addEventListener("scroll", () => {
   const scrollBar = document.querySelector(".scroll-bar");
   scrollBar.style.width = `${scrolled}%`;
 });
+
+// ===== animation scroll =====
+const leftAnimation = () => {
+  let left = document.getElementById("left_animate");
+  let positionLeft = left.getBoundingClientRect().bottom;
+
+  let windowSize = window.innerHeight ;
+
+  if(positionLeft < windowSize) {
+    left.classList.add('animate__bounceInLeft')
+  }
+  if (positionLeft > windowSize || positionLeft < !windowSize) {
+    left.classList.remove('animate__bounceInLeft')
+  }
+}
+
+const rightAnimation = () => {
+  let right = document.getElementById("right_animate");
+  let positionRight = right.getBoundingClientRect().top;
+
+  let windowSize = window.innerHeight ;
+
+  if(positionRight < windowSize) {
+    right.classList.add('animate__bounceInRight')
+  }
+  if (positionRight > windowSize || positionRight < !windowSize) {
+    right.classList.remove('animate__bounceInRight')
+  }
+}
+
+window.addEventListener("scroll", leftAnimation);
+window.addEventListener("scroll", rightAnimation);
