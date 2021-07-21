@@ -1,11 +1,12 @@
 // ===== show menu =====
 const showMenu = (toggleId, navId) => {
-  const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId);
+  const toggle = document.getElementById(toggleId);
+  const nav = document.getElementById(navId);
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       nav.classList.toggle("show");
+      nav.classList.toggle("animate__bounceInRight");
     });
   }
 };
@@ -64,17 +65,24 @@ window.addEventListener("scroll", () => {
   scrollBar.style.width = `${scrolled}%`;
 });
 
-// ===== animation scroll =====
+// ===== animation =====
 let windowSize = window.innerHeight ;
 
 const heroAnimation = () => {
   let heroImage = document.getElementById('hero_image');
-  heroImage.classList.add('animate__flipInX')
+  // heroImage.classList.add('animate__rubberBand')
+  heroImage.classList.add('animate__zoomInRight')
+  // 
+}
+
+const textAnimation = () => {
+  let heroText = document.getElementById('hero_text')
+  heroText.classList.add('animate__flipInX')
 }
 
 const leftAnimation = () => {
   let left = document.getElementById("left_animate");
-  let positionLeft = left.getBoundingClientRect().bottom;
+  let positionLeft = left.getBoundingClientRect().top;
 
   if(positionLeft < windowSize) {
     left.classList.add('animate__bounceInLeft')
@@ -97,5 +105,6 @@ const rightAnimation = () => {
 }
 
 document.addEventListener("DOMContentLoaded", heroAnimation);
+document.addEventListener("DOMContentLoaded", textAnimation);
 window.addEventListener("scroll", leftAnimation);
 window.addEventListener("scroll", rightAnimation);
