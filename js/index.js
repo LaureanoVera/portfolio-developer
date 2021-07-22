@@ -66,13 +66,10 @@ window.addEventListener("scroll", () => {
 });
 
 // ===== animation =====
-let windowSize = window.innerHeight ;
-
 const heroAnimation = () => {
   let heroImage = document.getElementById('hero_image');
   // heroImage.classList.add('animate__rubberBand')
   heroImage.classList.add('animate__zoomInRight')
-  // 
 }
 
 const textAnimation = () => {
@@ -80,57 +77,28 @@ const textAnimation = () => {
   heroText.classList.add('animate__flipInX')
 }
 
-const leftAnimation = () => {
-  let left = document.getElementById("left_animate");
-  let positionLeft = left.getBoundingClientRect().top;
+// Animations Generator
+let windowSize = window.innerHeight ;
 
-  if(positionLeft < windowSize) {
-    left.classList.add('animate__bounceInLeft')
+const scrollAnimation = (id, className) => {
+  let element = document.getElementById(id);
+  let position = element.getBoundingClientRect().top;
+
+  if (position < windowSize) {
+    element.classList.add(className)
   }
-  if (positionLeft > windowSize || positionLeft < !windowSize) {
-    left.classList.remove('animate__bounceInLeft')
+  if (position > windowSize || position < !windowSize) {
+    element.classList.remove(className)
   }
 }
 
-const rightAnimation = () => {
-  let right = document.getElementById("right_animate");
-  let positionRight = right.getBoundingClientRect().top;
-
-  if(positionRight < windowSize) {
-    right.classList.add('animate__bounceInRight')
-  }
-  if (positionRight > windowSize || positionRight < !windowSize) {
-    right.classList.remove('animate__bounceInRight')
-  }
-}
-
-const formAnimation = () => {
-  let form = document.getElementById("form");
-  let positionForm = form.getBoundingClientRect().top;
-
-  if(positionForm < windowSize) {
-    form.classList.add('animate__fadeInRight')
-  }
-  if (positionForm > windowSize || positionForm < !windowSize) {
-    form.classList.remove('animate__fadeInRight')
-  }
-}
-
-const contactAnimation = () => {
-  let contact = document.getElementById("contact_info");
-  let positionContact = contact.getBoundingClientRect().top;
-
-  if(positionContact < windowSize) {
-    contact.classList.add('animate__bounceInLeft')
-  }
-  if (positionContact > windowSize || positionContact < !windowSize) {
-    contact.classList.remove('animate__bounceInLeft')
-  }
+const animationController = () => {
+  scrollAnimation('left_animate','animate__bounceInLeft')
+  scrollAnimation('right_animate','animate__bounceInRight')
+  scrollAnimation('contact_info','animate__bounceInLeft')
+  scrollAnimation('form','animate__fadeInRight')
 }
 
 document.addEventListener("DOMContentLoaded", heroAnimation);
 document.addEventListener("DOMContentLoaded", textAnimation);
-window.addEventListener("scroll", leftAnimation);
-window.addEventListener("scroll", rightAnimation);
-window.addEventListener("scroll", formAnimation);
-window.addEventListener("scroll", contactAnimation);
+window.addEventListener("scroll", animationController);
