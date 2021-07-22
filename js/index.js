@@ -104,7 +104,33 @@ const rightAnimation = () => {
   }
 }
 
+const formAnimation = () => {
+  let form = document.getElementById("form");
+  let positionForm = form.getBoundingClientRect().top;
+
+  if(positionForm < windowSize) {
+    form.classList.add('animate__fadeInRight')
+  }
+  if (positionForm > windowSize || positionForm < !windowSize) {
+    form.classList.remove('animate__fadeInRight')
+  }
+}
+
+const contactAnimation = () => {
+  let contact = document.getElementById("contact_info");
+  let positionContact = contact.getBoundingClientRect().top;
+
+  if(positionContact < windowSize) {
+    contact.classList.add('animate__bounceInLeft')
+  }
+  if (positionContact > windowSize || positionContact < !windowSize) {
+    contact.classList.remove('animate__bounceInLeft')
+  }
+}
+
 document.addEventListener("DOMContentLoaded", heroAnimation);
 document.addEventListener("DOMContentLoaded", textAnimation);
 window.addEventListener("scroll", leftAnimation);
 window.addEventListener("scroll", rightAnimation);
+window.addEventListener("scroll", formAnimation);
+window.addEventListener("scroll", contactAnimation);
