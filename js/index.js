@@ -68,14 +68,13 @@ window.addEventListener("scroll", () => {
 // ===== animation =====
 const heroAnimation = () => {
   let heroImage = document.getElementById('hero_image');
-  // heroImage.classList.add('animate__rubberBand')
-  heroImage.classList.add('animate__zoomInRight')
-}
-
-const textAnimation = () => {
   let heroText = document.getElementById('hero_text')
+  
+  heroImage.classList.add('animate__zoomInRight')
+  // heroImage.classList.add('animate__rubberBand')
   heroText.classList.add('animate__flipInX')
 }
+
 
 // Animations Generator
 let windowSize = window.innerHeight ;
@@ -95,10 +94,9 @@ const scrollAnimation = (id, className) => {
 const animationController = () => {
   scrollAnimation('left_animate','animate__bounceInLeft')
   scrollAnimation('right_animate','animate__bounceInRight')
-  scrollAnimation('contact_info','animate__bounceInLeft')
+  scrollAnimation('contact_info','animate__fadeInLeft')
   scrollAnimation('form','animate__fadeInRight')
 }
 
 document.addEventListener("DOMContentLoaded", heroAnimation);
-document.addEventListener("DOMContentLoaded", textAnimation);
 window.addEventListener("scroll", animationController);
