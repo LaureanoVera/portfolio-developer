@@ -94,8 +94,8 @@ const scrollAnimation = (id, className) => {
 const animationController = () => {
   scrollAnimation('left_animate','animate__bounceInLeft')
   scrollAnimation('right_animate','animate__bounceInRight')
-  scrollAnimation('contact_info','animate__fadeInLeft')
-  scrollAnimation('form','animate__fadeInRight')
+  scrollAnimation('contact_info','animate__bounceInLeft')
+  scrollAnimation('form','animate__bounceInRight')
 }
 
 document.addEventListener("DOMContentLoaded", heroAnimation);
