@@ -1,0 +1,47 @@
+.nav {
+  height: @header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__item {
+    margin-bottom: @mb-4;
+  }
+  &__link {
+    position: relative;
+    color: @white-color;
+    text-shadow: -1px 1px rgba(0, 0, 0, 1);
+    border-bottom: 2px solid transparent;
+    padding-bottom: .05rem;
+    &:hover {
+      color: @dark-color;
+      text-shadow: -1px 1px @white-color;
+    }
+  }
+  &__logo {
+    color: @white-color;
+  }
+  &__toggle {
+    color: @white-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 150;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    padding: 2rem;
+    height: 100vh;
+    background: @gradient-rotate;
+    transition: .5s;
+    box-shadow: 0 0 5px @dark-color;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
