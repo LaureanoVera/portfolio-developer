@@ -1,0 +1,36 @@
+.home {
+  position: relative;
+  background-color: @first-color;
+  overflow: hidden;
+  height: 100vh;
+  &__container {
+    height: calc(100vh - (@header-height - 2rem));
+    row-gap: 5rem; 
+  }
+  &__title {
+    align-self: flex-end;
+    font-size: @big-font;
+    color: @white-color;
+    line-height: .8;
+    & span {
+      text-shadow:  0 20px 25px rgba(0, 0, 0, .5);
+    }
+  }
+  &__scroll {
+    align-self: flex-end;
+    padding-bottom: @mb-4;
+  }
+  &__scroll-link {
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    color: @white-color;
+  }
+  &__img {
+    opacity: 1;
+    filter: opacity(1);
+    position: absolute;
+    right: 1%;
+    bottom: 4%;
+    width: 268px;
+  }
+}
