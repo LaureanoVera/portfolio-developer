@@ -1,0 +1,23 @@
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  position: relative;
+  font-size: @h2-font-size;
+  color: @dark-color;
+  margin: @mb-4 0;
+  text-align: center;
+}
+
+.section-title::after {
+  position: absolute;
+  content: '';
+  width: 32px;
+  height: .18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: @first-color;
+}
