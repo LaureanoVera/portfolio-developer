@@ -56,3 +56,11 @@
     color: @dark-color;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .portfolio__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}

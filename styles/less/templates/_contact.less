@@ -53,3 +53,15 @@
   80% {transform: skew(10deg) scale(.95) rotate(-1deg);}
   90% {transform: skew(-10deg) scale(.85);}
 }
+
+@media screen and (min-width: 768px) {
+  .contact {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+    &__form {
+      width: 380px;
+    }
+  }
+}
