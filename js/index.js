@@ -63,40 +63,40 @@ window.addEventListener("scroll", () => {
 
   const scrollBar = document.querySelector(".scroll-bar");
   scrollBar.style.width = `${scrolled}%`;
+  // console.log(`Here: ${scrolled.toFixed()}%`); ===> TSSSSSSSS
 });
 
 // ===== animation =====
 const heroAnimation = () => {
-  let heroImage = document.getElementById('hero_image');
-  let heroText = document.getElementById('hero_text')
-  
-  heroImage.classList.add('animate__zoomInRight')
-  // heroImage.classList.add('animate__rubberBand')
-  heroText.classList.add('animate__flipInX')
-}
+  let heroImage = document.getElementById("hero_image");
+  let heroText = document.getElementById("hero_text");
 
+  heroImage.classList.add("animate__zoomInRight");
+  // heroImage.classList.add('animate__rubberBand')
+  heroText.classList.add("animate__flipInX");
+};
 
 // Animations Generator
-let windowSize = window.innerHeight ;
+let windowSize = window.innerHeight;
 
 const scrollAnimation = (id, className) => {
   let element = document.getElementById(id);
   let position = element.getBoundingClientRect().top;
 
   if (position < windowSize) {
-    element.classList.add(className)
+    element.classList.add(className);
   }
   if (position > windowSize || position < !windowSize) {
-    element.classList.remove(className)
+    element.classList.remove(className);
   }
-}
+};
 
 const animationController = () => {
-  scrollAnimation('left_animate','animate__bounceInLeft')
-  scrollAnimation('right_animate','animate__bounceInRight')
-  scrollAnimation('contact_info','animate__bounceInLeft')
-  scrollAnimation('form','animate__bounceInRight')
-}
+  scrollAnimation("left_animate", "animate__bounceInLeft");
+  scrollAnimation("right_animate", "animate__bounceInRight");
+  scrollAnimation("contact_info", "animate__bounceInLeft");
+  scrollAnimation("form", "animate__bounceInRight");
+};
 
 document.addEventListener("DOMContentLoaded", heroAnimation);
 window.addEventListener("scroll", animationController);
