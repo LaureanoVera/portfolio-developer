@@ -65,6 +65,11 @@ window.addEventListener("scroll", () => {
 
   // const scrollBar = document.querySelector(".scroll-bar");
   // scrollBar.style.width = `${scrolled}%`;
+  if (scrolled == 100) {
+    navTarget.style.color = `var(--first-color)`;
+  } else {
+    navTarget.style.color = `var(--text-color)`;
+  }
   navTarget.innerHTML = `${scrolled.toFixed(2)}%`;
 });
 

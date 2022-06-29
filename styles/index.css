@@ -190,8 +190,8 @@ img {
 }
 
 .nav__link:hover {
-  color: var(--dark-color);
-  text-shadow: -1px 1px var(--white-color);
+  color:var(--first-color);
+  text-shadow: -1px 1px var(--text-color);
 }
 
 .nav__logo {
@@ -280,8 +280,9 @@ img {
   width: 120px;
   height: 120px;
   background-color: var(--first-color);
-  border-radius: 50%;
+  border-radius: 15%;
   overflow: hidden;
+  box-shadow: 0 0 8px #14aafa8a;
 }
 
 .about__img img {
