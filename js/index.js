@@ -52,6 +52,8 @@ async function handleSubmit(event) {
 }
 
 // ===== progress bar =====
+let navTarget = document.querySelector(".nav__target");
+
 window.addEventListener("scroll", () => {
   const top = document.documentElement.scrollTop;
 
@@ -61,9 +63,9 @@ window.addEventListener("scroll", () => {
   const height = scroll - client;
   const scrolled = (top / height) * 100;
 
-  const scrollBar = document.querySelector(".scroll-bar");
-  scrollBar.style.width = `${scrolled}%`;
-  // console.log(`Here: ${scrolled.toFixed()}%`); ===> TSSSSSSSS
+  // const scrollBar = document.querySelector(".scroll-bar");
+  // scrollBar.style.width = `${scrolled}%`;
+  navTarget.innerHTML = `${scrolled.toFixed(2)}%`;
 });
 
 // ===== animation =====
