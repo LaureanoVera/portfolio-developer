@@ -404,7 +404,8 @@ img {
 }
 
 .timeline__content p {
-  font-weight: 300;
+  color: var(--text-color);
+  font-weight: 400;
 	line-height: 20px;
 }
 
