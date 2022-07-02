@@ -216,13 +216,13 @@ img {
 }
 
 .home__container {
-  height: calc(100vh - (var(--header-height)));
+  height: 100vh;
   /* row-gap: 5rem; */
 }
 
 .home__title {
   align-self: flex-end;
-  font-size: var(--big-font-size);
+  font-size: calc(var(--big-font-size) - 2rem);
   color: var(--white-color);
   line-height: .8;
 }
@@ -247,8 +247,8 @@ img {
   filter: opacity(1);
   position: absolute;
   right: 4%;
-  bottom: 1%;
-  width: 210px;
+  bottom: 0;
+  height: 188px;
   filter: drop-shadow(0 5px 5px var(--text-color));  
 }
 
@@ -388,17 +388,17 @@ img {
 .timeline__date {
   font-size: 18px;
 	color: var(--first-color);
-	margin:6px 0 15px;
+	margin:var(--mb-1) 0 var(--mb-2);
 }
 
 .timeline__content {
-  padding: 30px;
+  padding: var(--mb-2);
   border-radius: 8px;
 }
 
 .timeline__content h3 {
   color: var(--white-color);
-	margin:0 0 10px;
+	margin:0 0 var(--mb-1);
 	text-transform: capitalize;
 	font-weight: 500;
 }
@@ -419,7 +419,7 @@ img {
 	}
 	.timeline__item:nth-child(odd),
 	.timeline__item:nth-child(even){
-		padding-left: 37px;
+		padding-left: var(--mb-3);
 	}
 	.timeline__dot{
 		left:0;
